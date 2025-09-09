@@ -13,6 +13,14 @@ p{
     font-size: 18px;
     text-align: center;
 }
+/* logo section  */
+.logo{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* border: 1px solid yellow; */
+}
+
 /* navigations section */
 .navbar {
     display: flex;
@@ -24,17 +32,37 @@ p{
     top: 0;
     z-index: 1000;
 }
-.logo{
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
+/* center nav links  */
+.nav-center{
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
 .nav-links{
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 45px;
     margin: 0;
     padding: 0;
+    align-items: center;
+    /* border: 1px solid green; */
+    flex: 1;
+    justify-content: center;
+}
+/* push the auth link to the far right  */
+.nav-links .auth-link{
+    margin-left: auto;
+}
+/* button style  */
+.auth-link .btn.auth{
+    background: #3498db;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.auth-link .btn.auth:hover{
+    background: #2980b9;
 }
 .nav-links li a {
     color: white;
@@ -44,6 +72,12 @@ p{
 }
 .nav-links li a:hover{
     color: #3498db;
+}
+.menu-toggle{
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
 }
 
 /* hero section */
@@ -212,7 +246,27 @@ button {
     text-align: center;
     padding: 20px;
     font-size: 14px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
 }
+.footer .social-icons {
+    margin-top: 15px;
+}
+.footer .social-icons a {
+    color: white;
+    margin: 0 12px;
+    /* text-decoration: none; */
+    font-size: 20px;
+    transition: color 0.3s; 
+    transform: 0.3s;
+}
+.footer .social-icons a:hover {
+    color: #3498db;
+    transform: scale(1.2);
+}
+
 
 /* animation */
 .hero button, .contact button{
@@ -220,4 +274,41 @@ button {
 }
 .hero button:hover, .contact button:hover{
     transform: scale(3);
+}
+
+/* mobile responsive */
+@media(max-width:768px){
+    .navbar{
+        padding: 15px 20px;
+    }
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        background-color: #2980b9;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+        padding: 15px;
+        border-radius: 8px;
+        color: black;
+    }
+    /* show link when active  */
+    .nav-links.active{
+        display: flex;
+    }
+     .menu-toggle{
+        display: block;
+    }
+    /* .nav-links.auth-link{
+        margin-top: 10px;
+    } */
+   
+}
+@media(max-width:410px){
+    .auth-link{
+        /* display: none; */
+        font-size: 12px;
+    }
 }
