@@ -86,6 +86,12 @@
 
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+
+            if (navLinks.classList.contains('active')) {
+                menuToggle.innerHTML = '<i class="fas fa-times"></i>'; // Change to 'X' icon
+            } else {
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>'; // Change back to hamburger icon
+            }
         });
     </script>
 

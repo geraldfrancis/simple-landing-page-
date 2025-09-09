@@ -289,14 +289,19 @@ button {
         top: 60px;
         right: 0;
         width: 100%;
-        /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         padding: 15px;
         border-radius: 8px;
-        color: black;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.9s ease;
     }
     /* show link when active  */
     .nav-links.active{
         display: flex;
+        max-height: 500px;
+        opacity: 1;
     }
      .menu-toggle{
         display: block;
